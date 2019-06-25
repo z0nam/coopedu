@@ -17,8 +17,8 @@ SESSION_CONFIGS = [
     },{
         "name": "public_goods",
         "display_name": "공공재게임",
-        "num_demo_participants": 4,
-        "app_sequence": ["dictator", "trust", "public_goods"],
+        "num_demo_participants": 3,
+        "app_sequence": ["public_goods"],
         "my_key": "",
     }
 ]

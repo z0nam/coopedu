@@ -26,13 +26,14 @@ class Subsession(BaseSubsession):
 
 class Group(BaseGroup):
     sent_amount = models.CurrencyField(
-        doc="Amount sent by P1", max=Constants.endowment, min=0
+        doc="참가자1이 보낼 금액", max=Constants.endowment, min=0, choices=[0,1,2,3,4,5,6,7,8,9,10]
     )
-    sent_back_amount = models.CurrencyField(doc="Amount sent back by P2")
+    sent_back_amount = models.CurrencyField(doc="참가자2에게 보낼 금액")
 
     def sent_back_amount_choices(self):
-        return currency_range(c(0), self.sent_amount * Constants.multiplier, c(1))
+        return currency_range(c(0), Constants.endowment, c(1))
 
 
 class Player(BasePlayer):
-    pass
+    base = models.CurrencyField()
+    receive = models.CurrencyField()

@@ -15,7 +15,7 @@ class Constants(BaseConstants):
     name_in_url = "dictator"
     players_per_group = 2
     num_rounds = 1
-    endowment = c(100)
+    endowment = c(10)
     instructions_template = "dictator/instructions.html"
 
 
@@ -24,15 +24,17 @@ class Subsession(BaseSubsession):
 
 
 class Group(BaseGroup):
-    kept = models.CurrencyField(
-        doc="Amount dictator decided to keep for himself", max=Constants.endowment, min=0
+    give = models.CurrencyField(
+        doc="Amount dictator decided to give for opponent", max=Constants.endowment, min=0,
+        choices=[0,1,2,3,4,5,6,7,8,9,10]
     )
+
 
     def set_payoffs(self):
         p1 = self.get_player_by_id(1)
         p2 = self.get_player_by_id(2)
-        p1.payoff = self.kept
-        p2.payoff = Constants.endowment - self.kept
+        p1.payoff = Constants.endowment - self.give
+        p2.payoff = self.give
 
 
 class Player(BasePlayer):

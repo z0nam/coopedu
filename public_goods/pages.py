@@ -15,15 +15,20 @@ class ResultsWaitPage(WaitPage):
         players = group.get_players()
         contributions = [p.contribution for p in players]
         group.total_contribution = sum(contributions)
+        group.total_value_from_public = group.total_contribution * Constants.multiplier
         group.individual_share = (
-            group.total_contribution * Constants.multiplier / Constants.players_per_group
+            group.total_value_from_public / Constants.players_per_group
         )
         for p in players:
             p.payoff = Constants.endowment - p.contribution + group.individual_share
 
 
 class Results(Page):
-    pass
+    def vars_for_template(self):
+        return {
+            "totalvalue": self.group.total_value_from_public
+        }
+
 
 
 page_sequence = [Contribute, ResultsWaitPage, Results]

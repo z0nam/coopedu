@@ -1,16 +1,17 @@
 {% extends "global/Page.html" %}
 {% load otree %}
 
-{% block title %}Results{% endblock %}
+{% block title %}결과{% endblock %}
 
 {% block content %}
 
 <p>
-    You started with an endowment of {{ Constants.endowment }},
-    of which you contributed {{ player.contribution }}.
-    Your group contributed {{ group.total_contribution }},
-    resulting in an individual share of {{ group.individual_share }}.
-    Your profit is therefore {{ player.payoff }}.
+    당신은 처음에 {{ Constants.endowment }}를 가지고 있었습니다.<br>
+    당신은 이 중 {{ player.contribution }}를 공공 사업에 기여했습니다. <br>
+    당신이 속한 그룹의 총 기여액은 {{ group.total_contribution }}였습니다 <br>,
+    따라서 당신의 그룹은 공공 사업으로 인해 {{ totalvalue }}를 얻었습니다 <br>
+    그 결과 각 그룹원들은 {{ group.individual_share }}를 받았습니다. <br>
+    따라서 당신의 최종 보상은 {{ player.payoff }} 입니다.
 </p>
 
 {% next_button %}

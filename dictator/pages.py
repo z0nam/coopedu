@@ -10,7 +10,7 @@ class Introduction(Page):
 
 class Offer(Page):
     form_model = "group"
-    form_fields = ["kept"]
+    form_fields = ["give"]
 
     def is_displayed(self):
         return self.player.id_in_group == 1
@@ -23,7 +23,8 @@ class ResultsWaitPage(WaitPage):
 
 class Results(Page):
     def vars_for_template(self):
-        return {"offer": Constants.endowment - self.group.kept}
+        return {"p1payoff": Constants.endowment - self.group.give,
+                "offer": self.group.give}
 
 
 page_sequence = [Introduction, Offer, ResultsWaitPage, Results]

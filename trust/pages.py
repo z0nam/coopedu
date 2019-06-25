@@ -32,12 +32,23 @@ class ResultsWaitPage(WaitPage):
         group = self.group
         p1 = group.get_player_by_id(1)
         p2 = group.get_player_by_id(2)
-        p1.payoff = Constants.endowment - group.sent_amount + group.sent_back_amount
-        p2.payoff = group.sent_amount * Constants.multiplier - group.sent_back_amount
+        p1.base = Constants.endowment - group.sent_amount
+        p2.base = Constants.endowment - group.sent_back_amount
+        p1.receive = group.sent_back_amount * Constants.multiplier
+        p2.receive = group.sent_amount * Constants.multiplier
+        p1.payoff = p1.base + p1.receive
+        p2.payoff = p2.base + p2.receive
 
 
 class Results(Page):
-    pass
+    def vars_for_template(self):
+        group = self.group
+        p1 = group.get_player_by_id(1)
+        p2 = group.get_player_by_id(2)
+        return {"p1base": p1.base,
+                "p1receive": p1.receive,
+                "p2base": p2.base,
+                "p2receive": p2.receive}
 
 
 page_sequence = [Send, WaitForP1, SendBack, ResultsWaitPage, Results]
