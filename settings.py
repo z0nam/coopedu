@@ -8,18 +8,34 @@ SESSION_CONFIGS = [
         "num_demo_participants": 2,
         "app_sequence": ["dictator"],
         "my_key": "",
-    },{
+    }, {
         "name": "trust",
         "display_name": "신뢰게임",
         "num_demo_participants": 2,
         "app_sequence": ["trust"],
         "my_key": "",
-    },{
+    }, {
         "name": "public_goods",
         "display_name": "공공재게임",
         "num_demo_participants": 3,
         "app_sequence": ["public_goods"],
         "my_key": "",
+    }, {
+        "name": "basic_survey",
+        "display_name": "기초설문",
+        "num_demo_participants": 1,
+        "app_sequence": ["basic_survey"],
+        "my_key": "",
+    }, {
+        "name": "value_survey",
+        "display_name": "가치설문",
+        "num_demo_participants": 1,
+        "app_sequence": ["value_survey"],
+    }, {
+        "name": "ending",
+        "display_name": "설문시작, 종료",
+        "num_demo_participants": 1,
+        "app_sequence": ["introduction", "ending"],
     }
 ]
 LANGUAGE_CODE = "ko"
