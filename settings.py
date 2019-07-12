@@ -36,6 +36,16 @@ SESSION_CONFIGS = [
         "display_name": "설문시작, 종료",
         "num_demo_participants": 1,
         "app_sequence": ["introduction", "ending"],
+    }, {
+        "name": "behavioral_games",
+        "display_name": "행동실험",
+        "num_demo_participants": 1,
+        "app_sequence": ["behavioral_games"],
+    }, {
+        "name": "risk_attitude",
+        "display_name": "리스크선호",
+        "num_demo_participants": 1,
+        "app_sequence": ["risk_attitude"],
     }
 ]
 LANGUAGE_CODE = "ko"
@@ -52,3 +62,7 @@ SECRET_KEY = "blahblah"
 
 # if an app is included in SESSION_CONFIGS, you don't need to list it here
 INSTALLED_APPS = ["otree"]
+
+
+# declare urls.py to get panel_id from embrain
+ROOT_URLCONF = 'urls'

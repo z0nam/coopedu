@@ -7,7 +7,7 @@ class GlobalConstants:
     EXTERNAL_URL_TEST = 'http://127.0.0.1/~j/test/'  # running url
     EXTERNAL_URL_PRODUCTION = 'http://survey.panel.co.kr/2019/78469/m5.asp'  # reserved
 
-    IS_TEST = False
+    IS_TEST = True
 
     DEFAULT_PANEL_ID = "NO_PANEL_ID"
 

@@ -17,6 +17,7 @@ class Constants(BaseConstants):
     num_rounds = 1
     endowment = c(10)
     multiplier = 2
+    instruction_template = "public_goods/Explanation.html"
 
 
 class Subsession(BaseSubsession):

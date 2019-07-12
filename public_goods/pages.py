@@ -8,6 +8,13 @@ class Contribute(Page):
     form_model = "player"
     form_fields = ["contribution"]
 
+    def vars_for_template(self):
+        return{
+            "pgg_players_per_group": Constants.players_per_group,
+            "pgg_multiplier": Constants.multiplier,
+            "pgg_endowment": Constants.endowment,
+        }
+
 
 class ResultsWaitPage(WaitPage):
     def after_all_players_arrive(self):

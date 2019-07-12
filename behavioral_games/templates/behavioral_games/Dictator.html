@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    포인트 분배 게임 Type 1
+{% endblock %}
+
+{% block content %}
+    {% include Constants.dictator_instruction_template %}
+
+    {% formfield player.dictator_give label="나는 상대방에게 아래와 같은 금액을 줄 것입니다. " %}
+
+    <button class="btn btn-primary btn-large active">
+        금액 보내기
+    </button>
+
+{% endblock %}

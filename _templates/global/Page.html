@@ -1,10 +1,12 @@
 {% extends "otree/Page.html" %}
 {% load otree static %}
 
- <link rel="shortcut icon" type='image/x-icon' href="{% static '/favicon.ico' %}"/>
-
 {% block global_styles  %}
     <style>
+
+        .table > tbody > tr > td {
+            vertical-align: middle;
+        }
         .wrong_answer_mark {
             display: none;
             position: absolute;
