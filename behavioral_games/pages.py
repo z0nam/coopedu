@@ -8,10 +8,20 @@ class Dictator(Page):
     form_model = "player"
     form_fields = ["dictator_give"]
 
+    def vars_for_template(self) -> dict:
+        return {
+            "endowment": int(Constants.endowment),
+        }
+
 
 class Trust_Sender(Page):
     form_model = "player"
     form_fields = ["trust_give"]
+
+    def vars_for_template(self) -> dict:
+        return {
+            "endowment": int(Constants.endowment)
+        }
 
 
 class Trust_Receiver(Page):
@@ -35,11 +45,19 @@ class PGG(Page):
             "pgg_endowment": pgg_models.Constants.endowment,
             "pgg_multiplier": pgg_models.Constants.multiplier,
             "pgg_players_per_group": pgg_models.Constants.players_per_group,
+            "endowment": int(pgg_models.Constants.endowment),
         }
 
 
 class RiskChoice(Page):
-    pass
+    form_model = 'player'
+    form_fields = ['risk_choice_survey_version']
+
+    def vars_for_template(self) -> dict:
+        return{
+            "num_of_choices": Constants.risk_num_of_choices,
+            "num_of_cases_per_choice": Constants.risk_num_of_cases_per_choice,
+        }
 
 
 page_sequence = [

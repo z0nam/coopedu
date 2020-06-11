@@ -3,7 +3,7 @@
 from category_words import word_bundle
 import random
 
-DEFAULT_BLOCK_NUMBER = 20
+DEFAULT_BLOCK_NUMBER = 10
 FIRST, SECOND = 0, 1
 LEFT, RIGHT = 99, 100
 
@@ -196,6 +196,9 @@ class Blocks:
 
         self.iat_block_list[3].set_period(DEFAULT_BLOCK_NUMBER*2)
         self.iat_block_list[6].set_period(DEFAULT_BLOCK_NUMBER*2)
+
+        self.iat_block_list[0].set_period(0)
+        self.iat_block_list[4].set_period(0)
 
         for i in range(0,len(self.iat_block_list)):
             self.iat_block_list[i].additional_message = self.additional_messages[i]

@@ -9,6 +9,7 @@ from otree.api import (
     currency_range,
 )
 import random
+from Global_Constants import GlobalConstants
 
 
 class Constants(BaseConstants):
@@ -17,6 +18,7 @@ class Constants(BaseConstants):
     num_rounds = 1
     endowment = c(10)
     instructions_template = "dictator/explanation.html"
+    exchange_rate = GlobalConstants.EXCHANGE_RATE
 
 
 class Subsession(BaseSubsession):

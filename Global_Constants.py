@@ -5,9 +5,9 @@ class GlobalConstants:
     TIME_FORMAT = '"%Y년 %m월 %d일 %H시 %M분 %S초"'
 
     EXTERNAL_URL_TEST = 'http://127.0.0.1/~j/test/'  # running url
-    EXTERNAL_URL_PRODUCTION = 'http://survey.panel.co.kr/2019/78469/m5.asp'  # reserved
+    EXTERNAL_URL_PRODUCTION = 'http://survey.panel.co.kr/2019/80634/m5.asp+'  # reserved
 
-    IS_TEST = True
+    IS_TEST = False
 
     DEFAULT_PANEL_ID = "NO_PANEL_ID"
 
@@ -18,4 +18,4 @@ class GlobalConstants:
         EXTERNAL_URL = EXTERNAL_URL_PRODUCTION
         EXPIRE_SECONDS = EXPIRE_SECONDS_PRODUCTION
 
-    EXCHANGE_RATE = 103
+    EXCHANGE_RATE = 67

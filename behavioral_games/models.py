@@ -4,6 +4,8 @@ from otree.api import (
 )
 from dictator import models as dictator_models
 from trust import models as trust_models
+from risk_attitude import models as risk_models
+from Global_Constants import GlobalConstants
 
 
 author = 'Namun Cho <mailto:dr.strangelove@kberi.re.kr>'
@@ -18,11 +20,17 @@ class Constants(BaseConstants):
     players_per_group = None
     num_rounds = 1
 
+    exchange_rate = GlobalConstants.EXCHANGE_RATE
+
     endowment = dictator_models.Constants.endowment
     dictator_instruction_template = "dictator/explanation.html"
     trust_instruction_template = "trust/instructions.html"
     pgg_instruction_template = "public_goods/Explanation.html"
+    risk_instruction_template = "risk_attitude/instruction.html"
     multiplier = trust_models.Constants.multiplier
+
+    risk_num_of_choices = risk_models.Constants.num_of_choices
+    risk_num_of_cases_per_choice = risk_models.Constants.num_of_cases_per_choice
 
 
 class Subsession(BaseSubsession):
@@ -68,4 +76,11 @@ class Player(BasePlayer):
         doc="기여금액",
         min=0,
         choices=[c(i) for i in range(int(Constants.endowment)+1)],
+    )
+
+    risk_choice_survey_version = models.IntegerField(
+        doc="선호 상태 선택",
+        min=0,
+        choices=list(range(1,7)),
+        widget=widgets.RadioSelect,
     )

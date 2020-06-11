@@ -1,6 +1,6 @@
 from os import environ
 
-SESSION_CONFIG_DEFAULTS = {"real_world_currency_per_point": 90, "participation_fee": 5000}
+SESSION_CONFIG_DEFAULTS = {"real_world_currency_per_point": 67, "participation_fee": 1}
 SESSION_CONFIGS = [
     {
         "name": "dictator",
@@ -17,7 +17,7 @@ SESSION_CONFIGS = [
     }, {
         "name": "public_goods",
         "display_name": "공공재게임",
-        "num_demo_participants": 3,
+        "num_demo_participants": 4,
         "app_sequence": ["public_goods"],
         "my_key": "",
     }, {
@@ -46,7 +46,63 @@ SESSION_CONFIGS = [
         "display_name": "리스크선호",
         "num_demo_participants": 1,
         "app_sequence": ["risk_attitude"],
-    }
+    }, {
+        "name": "iat",
+        "display_name": "내재적 연관 검사",
+        "num_demo_participants": 2,
+        "app_sequence": ["introduction","iat"],
+    }, {
+        "name": "experimental_survey",
+        "display_name": "대안교육 treatment 0",
+        "num_demo_participants": 1,
+        "app_sequence": ["experimental_survey"],
+    }, {
+        "name": "experimental_survey_1",
+        "display_name": "대안교육 treatment 1",
+        "num_demo_participants": 1,
+        "app_sequence": ["experimental_survey_1"],
+    }, {
+        "name": "experimental_survey_2",
+        "display_name": "대안교육 treatment 2",
+        "num_demo_participants": 1,
+        "app_sequence": ["experimental_survey_2"],
+    }, {
+        "name": "type0",
+        "display_name": "대안교육 전체실험 type 0",
+        "num_demo_participants": 1,
+        "app_sequence": ["introduction",
+                         "basic_survey",
+                         "experimental_survey",
+                         "behavioral_games",
+                         "iat",
+                         "value_survey",
+                         "ending",
+                         ]
+    }, {
+        "name": "type1",
+        "display_name": "대안교육 전체실험 type 1",
+        "num_demo_participants": 1,
+        "app_sequence": ["introduction",
+                         "basic_survey",
+                         "experimental_survey_1",
+                         "behavioral_games",
+                         "iat",
+                         "value_survey",
+                         "ending",
+                         ]
+    }, {
+        "name": "type2",
+        "display_name": "대안교육 전체실험 type 2",
+        "num_demo_participants": 1,
+        "app_sequence": ["introduction",
+                         "basic_survey",
+                         "experimental_survey_2",
+                         "behavioral_games",
+                         "iat",
+                         "value_survey",
+                         "ending",
+                         ]
+    },
 ]
 LANGUAGE_CODE = "ko"
 REAL_WORLD_CURRENCY_CODE = "KRW"

@@ -205,7 +205,7 @@ class Player(BasePlayer):
     )
 
     having_child = models.IntegerField(
-        label = "귀하의 가족 구성원 중 미성년자 (1999년 12월 31일 이전 출생자)가 있습니까?",
+        label = "귀하의 가족 구성원 중 미성년자 (2001년 1월 1일 이후 출생자)가 있습니까?",
         choices = Constants.BINARY_CHOICE,
         widget = widgets.RadioSelectHorizontal,
     )
